@@ -28,31 +28,152 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
+            groupBox1 = new GroupBox();
+            btnClear = new Button();
+            btnAdd = new Button();
+            txtDueDate = new TextBox();
+            lblDueDate = new Label();
+            lblTaskBoxLabel = new Label();
+            txtTaskDescription = new TextBox();
+            gbTaskList = new GroupBox();
+            lblListBox = new Label();
+            lbTaskList = new ListBox();
+            groupBox1.SuspendLayout();
+            gbTaskList.SuspendLayout();
             SuspendLayout();
             // 
-            // button1
+            // groupBox1
             // 
-            button1.Location = new Point(471, 136);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 0;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
+            groupBox1.Controls.Add(btnClear);
+            groupBox1.Controls.Add(btnAdd);
+            groupBox1.Controls.Add(txtDueDate);
+            groupBox1.Controls.Add(lblDueDate);
+            groupBox1.Controls.Add(lblTaskBoxLabel);
+            groupBox1.Controls.Add(txtTaskDescription);
+            groupBox1.FlatStyle = FlatStyle.Flat;
+            groupBox1.Font = new Font("Segoe UI", 10F);
+            groupBox1.Location = new Point(12, 12);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(334, 110);
+            groupBox1.TabIndex = 0;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Task Entry Form";
+            // 
+            // btnClear
+            // 
+            btnClear.Location = new Point(172, 79);
+            btnClear.Name = "btnClear";
+            btnClear.Size = new Size(75, 23);
+            btnClear.TabIndex = 5;
+            btnClear.Text = "Clear Form";
+            btnClear.UseVisualStyleBackColor = true;
+            btnClear.Click += btnClear_Click_1;
+            // 
+            // btnAdd
+            // 
+            btnAdd.Location = new Point(253, 79);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(75, 23);
+            btnAdd.TabIndex = 4;
+            btnAdd.Text = "Add Task ";
+            btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += submitForm;
+            // 
+            // txtDueDate
+            // 
+            txtDueDate.Location = new Point(76, 50);
+            txtDueDate.Name = "txtDueDate";
+            txtDueDate.PlaceholderText = "2025-01-20";
+            txtDueDate.Size = new Size(252, 25);
+            txtDueDate.TabIndex = 3;
+            txtDueDate.KeyPress += Form1_KeyPress;
+            // 
+            // lblDueDate
+            // 
+            lblDueDate.AutoSize = true;
+            lblDueDate.Location = new Point(6, 53);
+            lblDueDate.Name = "lblDueDate";
+            lblDueDate.Size = new Size(67, 19);
+            lblDueDate.TabIndex = 2;
+            lblDueDate.Text = "Due Date";
+            // 
+            // lblTaskBoxLabel
+            // 
+            lblTaskBoxLabel.AutoSize = true;
+            lblTaskBoxLabel.Location = new Point(32, 27);
+            lblTaskBoxLabel.Name = "lblTaskBoxLabel";
+            lblTaskBoxLabel.Size = new Size(34, 19);
+            lblTaskBoxLabel.TabIndex = 1;
+            lblTaskBoxLabel.Text = "Task";
+            // 
+            // txtTaskDescription
+            // 
+            txtTaskDescription.Location = new Point(76, 19);
+            txtTaskDescription.Name = "txtTaskDescription";
+            txtTaskDescription.Size = new Size(252, 25);
+            txtTaskDescription.TabIndex = 0;
+            txtTaskDescription.KeyPress += Form1_KeyPress;
+            // 
+            // gbTaskList
+            // 
+            gbTaskList.Controls.Add(lblListBox);
+            gbTaskList.Controls.Add(lbTaskList);
+            gbTaskList.Font = new Font("Segoe UI", 12F);
+            gbTaskList.Location = new Point(12, 128);
+            gbTaskList.Name = "gbTaskList";
+            gbTaskList.Size = new Size(334, 419);
+            gbTaskList.TabIndex = 2;
+            gbTaskList.TabStop = false;
+            gbTaskList.Text = "Task List";
+            // 
+            // lblListBox
+            // 
+            lblListBox.AutoSize = true;
+            lblListBox.Font = new Font("Segoe UI", 9F);
+            lblListBox.Location = new Point(6, 26);
+            lblListBox.Name = "lblListBox";
+            lblListBox.Size = new Size(267, 15);
+            lblListBox.TabIndex = 3;
+            lblListBox.Text = "*Click on Task to Mark as Complete and Remove*";
+            // 
+            // lbTaskList
+            // 
+            lbTaskList.FormattingEnabled = true;
+            lbTaskList.ItemHeight = 21;
+            lbTaskList.Location = new Point(6, 44);
+            lbTaskList.Name = "lbTaskList";
+            lbTaskList.Size = new Size(322, 340);
+            lbTaskList.TabIndex = 1;
+            lbTaskList.SelectedIndexChanged += lbTaskList_SelectedIndexChanged;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(button1);
+            ClientSize = new Size(358, 559);
+            Controls.Add(gbTaskList);
+            Controls.Add(groupBox1);
+            ForeColor = SystemColors.ControlText;
             Name = "Form1";
-            Text = "Form1";
+            Text = "Sabra's To-Do App";
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            gbTaskList.ResumeLayout(false);
+            gbTaskList.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Button button1;
+        private GroupBox groupBox1;
+        private TextBox txtTaskDescription;
+        private TextBox txtDueDate;
+        private Label lblDueDate;
+        private Label lblTaskBoxLabel;
+        private Button btnAdd;
+        private Button btnClear;
+        private GroupBox gbTaskList;
+        private ListBox lbTaskList;
+        private Label lblListBox;
     }
 }
