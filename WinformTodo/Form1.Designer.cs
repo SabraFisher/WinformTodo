@@ -36,10 +36,8 @@
             lblTaskBoxLabel = new Label();
             txtTaskDescription = new TextBox();
             gbTaskList = new GroupBox();
-            lblListBox = new Label();
-            lbTaskList = new ListBox();
+            fpTasks = new FlowLayoutPanel();
             groupBox1.SuspendLayout();
-            gbTaskList.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
@@ -116,41 +114,28 @@
             // 
             // gbTaskList
             // 
-            gbTaskList.Controls.Add(lblListBox);
-            gbTaskList.Controls.Add(lbTaskList);
             gbTaskList.Font = new Font("Segoe UI", 12F);
             gbTaskList.Location = new Point(12, 128);
             gbTaskList.Name = "gbTaskList";
-            gbTaskList.Size = new Size(334, 419);
+            gbTaskList.Size = new Size(374, 489);
             gbTaskList.TabIndex = 2;
             gbTaskList.TabStop = false;
             gbTaskList.Text = "Task List";
             // 
-            // lblListBox
+            // fpTasks
             // 
-            lblListBox.AutoSize = true;
-            lblListBox.Font = new Font("Segoe UI", 9F);
-            lblListBox.Location = new Point(6, 26);
-            lblListBox.Name = "lblListBox";
-            lblListBox.Size = new Size(267, 15);
-            lblListBox.TabIndex = 3;
-            lblListBox.Text = "*Click on Task to Mark as Complete and Remove*";
-            // 
-            // lbTaskList
-            // 
-            lbTaskList.FormattingEnabled = true;
-            lbTaskList.ItemHeight = 21;
-            lbTaskList.Location = new Point(6, 44);
-            lbTaskList.Name = "lbTaskList";
-            lbTaskList.Size = new Size(322, 340);
-            lbTaskList.TabIndex = 1;
-            lbTaskList.SelectedIndexChanged += lbTaskList_SelectedIndexChanged;
+            fpTasks.AutoScroll = true;
+            fpTasks.Location = new Point(12, 156);
+            fpTasks.Name = "fpTasks";
+            fpTasks.Size = new Size(368, 455);
+            fpTasks.TabIndex = 0;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(358, 559);
+            ClientSize = new Size(398, 629);
+            Controls.Add(fpTasks);
             Controls.Add(gbTaskList);
             Controls.Add(groupBox1);
             ForeColor = SystemColors.ControlText;
@@ -158,8 +143,6 @@
             Text = "Sabra's To-Do App";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
-            gbTaskList.ResumeLayout(false);
-            gbTaskList.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -173,7 +156,6 @@
         private Button btnAdd;
         private Button btnClear;
         private GroupBox gbTaskList;
-        private ListBox lbTaskList;
-        private Label lblListBox;
+        private FlowLayoutPanel fpTasks;
     }
 }

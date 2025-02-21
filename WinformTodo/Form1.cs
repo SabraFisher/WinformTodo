@@ -39,6 +39,7 @@ namespace WinformTodo
 
             Todo myTodo = new Todo(txtTaskDescription.Text, DateTime.Parse(txtDueDate.Text));
             TaskList.Add(myTodo);
+            fpTasks.Controls.Add(new TaskControl(myTodo));
             
             UpdateListBox();
             ClearForm();
@@ -46,7 +47,7 @@ namespace WinformTodo
         
         public void UpdateListBox()
         {
-            lbTaskList.Items.Clear();
+            //lbTaskList.Items.Clear();
 
             var list = TaskList
                 .Where(t => t.IsDone == false)
@@ -55,7 +56,7 @@ namespace WinformTodo
 
             for (int i = 0; i < list.Count; i++)
             {
-                lbTaskList.Items.Add(list[i].ToString());
+                //lbTaskList.Items.Add(list[i].ToString());
             }
         }
         private void btnClear_Click_1(object sender, EventArgs e)
@@ -78,34 +79,34 @@ namespace WinformTodo
             }
         }
 
-        private void lbTaskList_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //MessageBox.Show($"Selected Index is: {lbTaskList.SelectedIndex}");
-            int selectedIndex = lbTaskList.SelectedIndex;
-            string? selectedItem = lbTaskList.SelectedItem as String;
+        //private void lbTaskList_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    //MessageBox.Show($"Selected Index is: {lbTaskList.SelectedIndex}");
+        //    //int selectedIndex = lbTaskList.SelectedIndex;
+        //    //string? selectedItem = lbTaskList.SelectedItem as String;
 
-            if (selectedIndex == -1)
-            {
-                return;
-            }
+        //    if (selectedIndex == -1)
+        //    {
+        //        return;
+        //    }
 
-            if (selectedItem == null) 
-            {
-                MessageBox.Show("No item selected at the index.");
-                return; 
-            }
+        //    if (selectedItem == null) 
+        //    {
+        //        MessageBox.Show("No item selected at the index.");
+        //        return; 
+        //    }
 
-            int id = Int32.Parse(selectedItem.Split(" - ")[0]);
+        //    int id = Int32.Parse(selectedItem.Split(" - ")[0]);
 
-            var todo = TaskList.Find(t => t.Id == id);
+        //    var todo = TaskList.Find(t => t.Id == id);
 
-            if (todo != null)
-            {
-                todo.IsDone = !todo.IsDone;
+        //    if (todo != null)
+        //    {
+        //        todo.IsDone = !todo.IsDone;
 
-                UpdateListBox();
-            }
+        //        UpdateListBox();
+        //    }
 
-        }
+        //}
     }
 }
